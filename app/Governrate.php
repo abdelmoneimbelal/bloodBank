@@ -11,9 +11,9 @@ class Governrate extends Model
     protected $fillable = ['name'];
     public $timestamps = true;
 
-    public function governrate()
+    public function cities()
     {
-        return $this->hasMany('App\City');
+        return $this->belongsToMany('App\City');
     }
 
     public function clients()

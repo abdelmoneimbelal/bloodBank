@@ -28,6 +28,7 @@ Route::group(['prefix' => 'v1','namespace' => 'Api'],function(){
     Route::get('categories','MainController@categories');
     Route::get('articles','MainController@articles');
     Route::get('setting','MainController@setting');
+    Route::get('notification','MainController@setting');
 
     Route::group(['middleware' => 'auth:api'], function () {
         //Route::get('articles','MainController@articles');

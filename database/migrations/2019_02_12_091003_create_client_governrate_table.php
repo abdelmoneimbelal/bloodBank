@@ -17,6 +17,6 @@ class CreateClientGovernrateTable extends Migration {
 
 	public function down()
 	{
-		Schema::drop('clients_governrates');
+		Schema::drop('client_governrate');
 	}
 }

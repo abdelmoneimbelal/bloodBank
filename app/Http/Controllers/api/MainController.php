@@ -136,7 +136,7 @@ class MainController extends Controller
                // create a notification on database
                $notification = $order->notification()->create([
                     'title' => 'يوجد حالة تبرع قريبة منك',
-                    'content' => $order->blood_types . 'احتاج متبرع لفصيلة'
+                    'content' => $order->bloodTypes->name . 'احتاج متبرع لفصيلة'
                ]);
 
                // attach clients to this notification
@@ -147,7 +147,7 @@ class MainController extends Controller
 
                if (count($tokens))
                {
-                   public_path();
+                   //public_path();
                    $title = $notification->title;
                    $body = $notification->content;
                    $data = [
@@ -155,6 +155,7 @@ class MainController extends Controller
                    ];
                    $send = notifyByFirebase($title, $body, $tokens, $data);
                    info("firebase result: " . $send);
+                   info("tokens:" . json_encode($tokens));
 //                info("data: " . json_encode($data));
                }
            }
@@ -172,6 +173,14 @@ class MainController extends Controller
         return responseJson(1,'done',$data);
     */
 
+
+    }
+
+    public function notification(){
+
+        $notification = Notification::all();
+
+        return responseJson(1,'success',$notification);
 
     }
 

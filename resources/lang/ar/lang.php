@@ -9,6 +9,7 @@ return
         'governorates' => 'المحافظات',
         'cities' => 'المدن',
         'clients' => 'العملاء',
+        'admins' => 'المشرفين',
         'categories' => 'الاقسام',
         'posts' => 'المقلات',
         'donations' => 'الطلبات',

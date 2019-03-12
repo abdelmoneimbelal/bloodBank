@@ -8,6 +8,7 @@
             'dashboard' => 'Dashboard',
             'governorates' => 'Governorates',
             'clients' => 'Clients',
+            'admins' => 'Admins',
             'cities' => 'Cities',
             'categories' => 'Categories',
             'posts' => 'Posts',

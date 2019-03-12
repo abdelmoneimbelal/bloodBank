@@ -125,6 +125,7 @@
                 <li><a href="{{url(route('articles.index'))}}"><i class="fa fa-comment"></i> <span>{{trans('lang.posts')}}</span></a></li>
                 <li><a href="{{url(route('orders.index'))}}"><i class="fa fa-heart"></i> <span>{{trans('lang.donations')}}</span></a></li>
                 <li><a href="{{url(route('cantacts.index'))}}"><i class="fa fa-phone"></i> <span>{{trans('lang.contacts')}}</span></a></li>
+                <li><a href="{{url(route('users.index'))}}"><i class="fa fa-user-secret"></i> <span>{{trans('lang.admins')}}</span></a></li>
                 <li><a href="#"><i class="fa fa-cogs"></i> <span>{{trans('lang.settings')}}</span></a></li>
                <!-- <li class="treeview">
                     <a href="#">

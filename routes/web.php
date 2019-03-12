@@ -23,6 +23,7 @@ Route::group(
         });
 
         Route::resource('clients', 'ClientController');
+        Route::resource('users', 'UserController');
         Route::resource('orders', 'OrdersController');
         Route::resource('articles', 'ArticlesController');
         Route::resource('notifications', 'NotificationsController');
