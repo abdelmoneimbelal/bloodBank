@@ -13,9 +13,9 @@ class UserstableSeeder extends Seeder
     {
         $user = \App\User::create([
             'name' => 'admin',
-            'email' => 'admin@app.com',
+            'email' => 'super_admin@app.com',
             'password' => bcrypt('123456')
         ]);
-        $user->attachRole('admin');
+        $user->attachRole('super_admin');
     }
 }

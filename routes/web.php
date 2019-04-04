@@ -22,6 +22,7 @@ Route::group(
             return view('auth.login');
         });
 
+        Auth::routes(['register' => false]);
         Route::resource('clients', 'ClientController');
         Route::resource('users', 'UserController');
         Route::resource('orders', 'OrdersController');
@@ -33,7 +34,6 @@ Route::group(
         Route::resource('cantacts', 'CantactsController');
         Route::resource('setting', 'SettingController');
 
-        Auth::routes();
 
         Route::get('/home', 'HomeController@index')->name('home');
 

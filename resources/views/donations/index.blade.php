@@ -72,6 +72,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{$records->links()}}
                     </div>
                 @else
                     <div class="alert alert-danger" role="alert">

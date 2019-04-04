@@ -2,15 +2,16 @@
 
 return [
     'role_structure' => [
-        'admin' => [
+        'super_admin' => [
             'users' => 'c,r,u,d',
-            'acl' => 'c,r,u,d',
-            'profile' => 'r,u'
+            'categories' => 'c,r,u,d',
+            'governorates' => 'c,r,u,d',
+            'posts' => 'c,r,u,d',
         ],
-//        'administrator' => [
-//            'users' => 'c,r,u,d',
-//            'profile' => 'r,u'
-//        ],
+
+        'admin' => [
+        ],
+
 //        'user' => [
 //            'profile' => 'r,u'
 //        ],

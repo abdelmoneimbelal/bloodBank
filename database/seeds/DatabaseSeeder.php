@@ -9,6 +9,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		//Model::unguard();
         $this->call(LaratrustSeeder::class);
+        $this->call(RolesTableSeeder::class);
         $this->call(UserstableSeeder::class);
     }
 }

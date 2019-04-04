@@ -11,6 +11,8 @@ use App\Category;
 use App\setting;
 use App\Order;
 use App\Token;
+use App\Notification;
+
 class MainController extends Controller
 {
     /*public function articles()

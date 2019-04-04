@@ -18,7 +18,11 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{asset('adminlte/css/skins/_all-skins.min.css')}}">
-    @if(app()->getLocale() == 'ar')
+    {{--noty--}}
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/noty/noty.css') }}">
+    <script src="{{ asset('adminlte/plugins/noty/noty.min.js') }}"></script>
+
+@if(app()->getLocale() == 'ar')
     <link rel="stylesheet" href="{{asset('adminlte/css/bootstrap-rtl.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/css/AdminLTE-rtl.min.css')}}">
     <link rel="stylesheet" href="{{asset('adminlte/css/rtl.css')}}">
@@ -116,6 +120,27 @@
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
+                <li><a href="{{ route('home') }}"><i class="fa fa-th"></i><span>@lang('lang.dashboard')</span></a></li>
+
+{{--                @if (auth()->user()->hasPermission('read_categories'))--}}
+{{--                    <li><a href="{{ route('categories.index') }}"><i class="fa fa-th"></i><span>@lang('lang.categories')</span></a></li>--}}
+{{--                @endif--}}
+
+{{--                @if (auth()->user()->hasPermission('read_posts'))--}}
+{{--                    <li><a href="{{ route('posts.index') }}"><i class="fa fa-th"></i><span>@lang('lang.posts')</span></a></li>--}}
+{{--                @endif--}}
+
+{{--                @if (auth()->user()->hasPermission('read_clients'))--}}
+{{--                    <li><a href="{{ route('clients.index') }}"><i class="fa fa-th"></i><span>@lang('lang.clients')</span></a></li>--}}
+{{--                @endif--}}
+
+{{--                @if (auth()->user()->hasPermission('read_admins'))--}}
+{{--                    <li><a href="{{ route('users.index') }}"><i class="fa fa-th"></i><span>@lang('lang.users')</span></a></li>--}}
+{{--                @endif--}}
+
+{{--                @if (auth()->user()->hasPermission('read_governorates'))--}}
+{{--                    <li><a href="{{ route('users.index') }}"><i class="fa fa-th"></i><span>@lang('lang.users')</span></a></li>--}}
+{{--                @endif--}}
                 <li class="header"><b>{{trans('lang.min_nav')}}</b></li>
                 <li><a href="{{url('home')}}"><i class="fa fa-dashboard"></i> <span>{{trans('lang.dashboard')}}</span></a></li>
                 <li><a href="{{url(route('clients.index'))}}"><i class="fa fa-users"></i> <span>{{trans('lang.clients')}}</span></a></li>
@@ -125,7 +150,9 @@
                 <li><a href="{{url(route('articles.index'))}}"><i class="fa fa-comment"></i> <span>{{trans('lang.posts')}}</span></a></li>
                 <li><a href="{{url(route('orders.index'))}}"><i class="fa fa-heart"></i> <span>{{trans('lang.donations')}}</span></a></li>
                 <li><a href="{{url(route('cantacts.index'))}}"><i class="fa fa-phone"></i> <span>{{trans('lang.contacts')}}</span></a></li>
-                <li><a href="{{url(route('users.index'))}}"><i class="fa fa-user-secret"></i> <span>{{trans('lang.admins')}}</span></a></li>
+                @if (auth()->user()->hasPermission('read_users'))
+                <li><a href="{{url(route('users.index'))}}"><i class="fa fa-user-secret"></i> <span>{{trans('lang.users')}}</span></a></li>
+                @endif
                 <li><a href="#"><i class="fa fa-cogs"></i> <span>{{trans('lang.settings')}}</span></a></li>
                <!-- <li class="treeview">
                     <a href="#">
